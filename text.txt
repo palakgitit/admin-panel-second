@@ -1,0 +1,37 @@
+
+- index.ejs:
+
+- change the name at welcome name : join with it js
+
+
+- form field:
+
+- first name 
+-last name
+- email
+-username
+-password
+- mobile 
+- city 
+- dob 
+- hobby
+- gender
+- address
+- role
+- bio 
+- avatar 
+
+
+- register
+
+- email 
+- f , l name 
+- usrname 
+- password
+
+
+
+- login
+
+- email 
+- password

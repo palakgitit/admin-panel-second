@@ -1,0 +1,254 @@
+<%- include("partials/header") %>
+
+    <div class="container-fluid page-body-wrapper">
+
+        <%- include("partials/sidebar") %>
+
+            <div class="main-panel">
+
+                <div class="content-wrapper  d-flex justify-content-center align-items-center"
+     style="min-height: calc(100vh - 70px ) !important;">
+
+                    <div class="row mb-4">
+
+                        <div class="col-12">
+
+                            <h3 class="page-title">
+
+                                <i class="ti-user text-primary me-2"></i>
+
+                                Profile
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-4">
+
+
+                        <div class="col-lg-4">
+
+                            <div class="card profile-card h-100">
+                            
+                                <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                            
+                                    <img src="/uploads/<%= user.avatar %>" class="profile-avatar mb-4" alt="<%= user.firstName %>">
+                            
+                                    <h3 class="mb-1">
+                                        <%= user.firstName %>
+                                            <%= user.lastName %>
+                                    </h3>
+                            
+                                    <p class="text-muted mb-3">
+                                        @<%= user.username %>
+                                    </p>
+                            
+                                    <span class="role-badge">
+                                        <%= user.role %>
+                                    </span>
+                            
+                                    <hr class="w-100">
+                            
+                                    <div class="mt-4 d-grid gap-2 w-100">
+                            
+                                        <a href="/edit-user/<%= user._id %>" class="btn btn-primary">
+                                            <i class="ti-pencil me-1"></i>
+                                            Edit Profile
+                                        </a>
+                            
+                                        <a href="/views" class="btn btn-light">
+                                            Back
+                                        </a>
+                            
+                                    </div>
+                            
+                                </div>
+                            
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-lg-8">
+
+
+                            <div class="card profile-info-card">
+
+                                <div class="card-body">
+
+                                    <h4 class="section-title mb-4">
+
+                                        Personal Information
+
+                                    </h4>
+
+                                    <div class="info-grid">
+
+                                        <div class="info-box">
+
+                                            <label>First Name</label>
+
+                                            <span>
+                                                <%= user.firstName %>
+                                            </span>
+
+                                        </div>
+
+                                        <div class="info-box">
+
+                                            <label>Last Name</label>
+
+                                            <span>
+                                                <%= user.lastName %>
+                                            </span>
+
+                                        </div>
+
+                                        <div class="info-box">
+
+                                            <label>Username</label>
+
+                                            <span>@<%= user.username %></span>
+
+                                        </div>
+
+                                        <div class="info-box">
+
+                                            <label>Role</label>
+
+                                            <span class="role-badge">
+
+                                                <%= user.role %>
+
+                                            </span>
+
+                                        </div>
+
+                                        <div class="info-box">
+
+                                            <label>Email</label>
+
+                                            <span>
+                                                <%= user.email %>
+                                            </span>
+
+                                        </div>
+
+                                        <div class="info-box">
+
+                                            <label>Mobile</label>
+
+                                            <span>
+                                                <%= user.mobile %>
+                                            </span>
+
+                                        </div>
+
+                                        <div class="info-box">
+
+                                            <label>Gender</label>
+
+                                            <span class="gender-badge">
+
+                                                <%= user.gender %>
+
+                                            </span>
+
+                                        </div>
+
+                                        <div class="info-box">
+
+                                            <label>Joined</label>
+
+                                            <span>
+
+                                                <%= user.createdAt.toLocaleDateString() %>
+
+                                            </span>
+
+                                        </div>
+
+                                        <div class="info-box">
+
+                                            <label>Updated</label>
+
+                                            <span>
+
+                                                <%= user.updatedAt.toLocaleDateString() %>
+
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="card security-card mt-4">
+
+                                <div class="card-body">
+
+                                    <h4 class="section-title mb-4">
+
+                                        Security
+
+                                    </h4>
+
+                                    <div class="security-row">
+
+                                        <div>
+
+                                            <label class="security-label">
+
+                                                Password
+
+                                            </label>
+
+                                            <div class="password-mask">
+
+                                                ••••••••••••••••
+
+                                            </div>
+
+                                            <small class="text-muted">
+
+                                                Passwords are securely encrypted using bcrypt.
+
+                                            </small>
+
+                                        </div>
+
+                                        <div>
+
+                                            <a href="/change-password" class="btn btn-primary">
+
+                                                <i class="ti-lock me-1"></i>
+
+                                                Change Password
+
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+    </div>
+
+    <%- include("partials/footer") %>

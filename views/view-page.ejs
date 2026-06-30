@@ -1,0 +1,308 @@
+<%- include("partials/header") %>
+
+    <div class="container-fluid page-body-wrapper">
+
+        <%- include("partials/sidebar") %>
+     
+
+        
+
+        <div class="main-panel">
+
+            <div class="content-wrapper">
+
+                <% if(success.length){ %>
+
+                    <div class="alert alert-success alert-dismissible fade show">
+
+                        <%= success %>
+
+                            <button class="btn-close" data-bs-dismiss="alert"></button>
+
+                    </div>
+
+                    <% } %>
+
+                        <% if(error.length){ %>
+
+                            <div class="alert alert-danger alert-dismissible fade show">
+
+                                <%= error %>
+
+                                    <button class="btn-close" data-bs-dismiss="alert"></button>
+
+                            </div>
+
+                            <% } %>
+
+                                <div class="card user-card">
+
+                                    <div class="card-header">
+
+                                        <div class="d-flex justify-content-between align-items-center">
+
+                                            <h4 class="mb-0 fw-bold">
+
+                                                <i class="ti-user text-primary me-2"></i>
+
+                                                User Management
+
+                                            </h4>
+
+                                            <a href="/add-user" class="btn btn-primary">
+
+                                                <i class="ti-plus"></i>
+
+                                                Add User
+
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="card-body">
+
+                                        <div class="row mb-4">
+
+                                            <div class="col-md-5">
+
+                                                <span class="text-muted">
+
+                                                    Total Users :
+
+                                                    <strong>
+
+                                                        <%= users.length %>
+
+                                                    </strong>
+
+                                                </span>
+
+                                            </div>
+
+                                            <div class="col-md-7">
+
+                                                <input id="searchUser" type="text"
+                                                    class="form-control search-box float-end"
+                                                    placeholder="Search username, email, mobile, role...">
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="table-responsive">
+
+                                            <table id="userTable" class="table table-hover align-middle text-center">
+
+                                                <thead>
+
+                                                    <tr>
+
+                                                        <th>#</th>
+
+                                                        <th>Avatar</th>
+
+                                                        <th>Username</th>
+
+                                                        <th>Email</th>
+
+                                                        <th>Mobile</th>
+
+                                                        <th>Gender</th>
+
+                                                        <th>Role</th>
+
+                                                        <th width="180">
+                                                            Actions
+                                                        </th>
+
+                                                    </tr>
+
+                                                </thead>
+
+                                                <tbody>
+
+                                                    <% if(users.length===0){ %>
+
+                                                        <tr>
+
+                                                            <td colspan="8" class="py-5">
+
+                                                                No Users Found
+
+                                                            </td>
+
+                                                        </tr>
+
+                                                        <% } %>
+
+                                                            <% users.forEach((user,index)=>{ %>
+
+                                                                <tr>
+
+                                                                    <td>
+
+                                                                        <strong>
+
+                                                                            <%= index+1 %>
+
+                                                                        </strong>
+
+                                                                    </td>
+
+                                                                    <td>
+
+                                                                        <img src="/uploads/<%= user.avatar %>"
+                                                                            class="table-avatar" alt="Avatar">
+
+                                                                    </td>
+
+                                                                    <td class="fw-bold">
+
+                                                                        <%= user.username %>
+
+                                                                    </td>
+
+                                                                    <td class="text-muted">
+
+                                                                        <%= user.email %>
+
+                                                                    </td>
+
+                                                                    <td>
+
+                                                                        <%= user.mobile %>
+
+                                                                    </td>
+
+                                                                <td>
+                                                                
+                                                                    <span class="gender-badge">
+                                                                
+                                                                        <%= user.gender %>
+                                                                
+                                                                    </span>
+                                                                
+                                                                </td>
+
+                                                                    <td>
+
+                                                                        <span class="role-badge">
+
+                                                                            <%= user.role %>
+
+                                                                        </span>
+
+                                                                    </td>
+
+                                                                    <td>
+
+                                                                        <a href="/view-user/<%= user._id %>"
+                                                                            class="action-btn view-btn" title="View">
+
+                                                                            <i class="ti-eye"></i>
+
+                                                                        </a>
+
+                                                                        <a href="/edit-user/<%= user._id %>"
+                                                                            class="action-btn edit-btn" title="Edit">
+
+                                                                            <i class="ti-pencil"></i>
+
+                                                                        </a>
+
+                                                                        <a href="/delete-user/<%= user._id %>"
+                                                                            class="action-btn delete-btn" title="Delete"
+                                                                            onclick="return confirm('Are you sure you want to delete this user?')">
+
+                                                                            <i class="ti-trash"></i>
+
+                                                                        </a>
+
+                                                                    </td>
+
+                                                                </tr>
+
+                                                                <% }) %>
+
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+
+                                        <div class="text-end mt-4">
+
+                                            <span class="badge bg-primary px-3 py-2">
+
+                                                Total Users :
+                                                <%= users.length %>
+
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+            </div>
+
+            <footer class="footer">
+
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+
+                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+
+                        Copyright © 2026.
+
+                        <a href="https://www.bootstrapdash.com/" target="_blank">
+
+                            Skydash Admin
+
+                        </a>
+
+                        All rights reserved.
+
+                    </span>
+
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+
+                        Made with
+
+                        <i class="ti-heart text-danger"></i>
+
+                    </span>
+
+                </div>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const searchInput = document.getElementById("searchUser");
+
+        searchInput.addEventListener("keyup", function () {
+
+            const value = this.value.toLowerCase();
+
+            const rows = document.querySelectorAll("#userTable tbody tr");
+
+            rows.forEach(function (row) {
+
+                const text = row.textContent.toLowerCase();
+
+                row.style.display = text.includes(value) ? "" : "none";
+
+            });
+
+        });
+
+    </script>
+
+    <%- include("partials/footer") %>

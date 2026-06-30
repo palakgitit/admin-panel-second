@@ -1,0 +1,219 @@
+
+<%- include("partials/header") %>
+
+    <div class="container-fluid page-body-wrapper">
+
+        <%- include("partials/sidebar") %>
+
+             partial 
+            <div class="main-panel">
+                <div class="content-wrapper py-4">
+            
+                    <div class="row justify-content-center">
+                        <div class="col-lg-11">
+            
+                            <div class="card">
+                                <div class="card-body">
+            
+                                    <h3 class="card-title   heading"> Add New User</h3>
+                                    <%- include("partials/flash") %>
+            
+                                        <form action="/add-user" method="POST" enctype="multipart/form-data">
+                                        
+                                            <div class="row">
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label>First Name</label>
+                                                        <input type="text" name="firstName" class="form-control" value="<%= formData?.firstName || '' %>"
+                                                            placeholder="Enter First Name" required>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label>Last Name</label>
+                                                        <input type="text" name="lastName" class="form-control" value="<%= formData?.lastName || '' %>"
+                                                            placeholder="Enter Last Name" required>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label>Username</label>
+                                                        <input type="text" name="username" class="form-control" value="<%= formData?.username || '' %>"
+                                                            placeholder="Enter Username" required>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label>Email</label>
+                                                        <input type="email" name="email" class="form-control" value="<%= formData?.email || '' %>"
+                                                            placeholder="Enter Email" required>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label>Password</label>
+                                                        <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label>Mobile Number</label>
+                                                        <input type="text" name="mobile" class="form-control" value="<%= formData?.mobile || '' %>"
+                                                            placeholder="Enter Mobile Number">
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label>City</label>
+                                                        <input type="text" name="city" class="form-control" value="<%= formData?.city || '' %>"
+                                                            placeholder="Enter City">
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label>Date of Birth</label>
+                                                        <input type="date" name="dob" class="form-control" value="<%= formData?.dob || '' %>">
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label>Hobby</label>
+                                                        <input type="text" name="hobby" class="form-control" value="<%= formData?.hobby || '' %>"
+                                                            placeholder="Enter Hobby">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label>Profile Image</label>
+                                                        <input type="file" name="avatar" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label>Gender</label>
+                                            
+                                                        <select name="gender" class="form-control">
+                                            
+                                                            <option value="">Select Gender</option>
+                                            
+                                                            <option value="Male" <%=formData?.gender=="Male" ? "selected" : "" %>>
+                                                                Male
+                                                            </option>
+                                            
+                                                            <option value="Female" <%=formData?.gender=="Female" ? "selected" : "" %>>
+                                                                Female
+                                                            </option>
+                                            
+                                                            <option value="Other" <%=formData?.gender=="Other" ? "selected" : "" %>>
+                                                                Other
+                                                            </option>
+                                            
+                                                        </select>
+                                            
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label>Role</label>
+                                            
+                                                        <select name="role" class="form-control">
+                                            
+                                                            <option value="">Select Role</option>
+                                            
+                                                            <option value="Admin" <%=formData?.role=="Admin" ? "selected" : "" %>>
+                                                                Admin
+                                                            </option>
+                                            
+                                                            <option value="Manager" <%=formData?.role=="Manager" ? "selected" : "" %>>
+                                                                Manager
+                                                            </option>
+                                            
+                                                            <option value="Employee" <%=formData?.role=="Employee" ? "selected" : "" %>>
+                                                                Employee
+                                                            </option>
+                                            
+                                                           
+                                                        </select>
+                                            
+                                                    </div>
+                                                </div>
+                                            
+                                               
+                                                <div class="col-12">
+                                                    <div class="form-group mb-3">
+                                                        <label>Address</label>
+                                            
+                                                        <textarea name="address" rows="3" class="form-control"
+                                                            placeholder="Enter Address"><%= formData?.address || '' %></textarea>
+                                            
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-12">
+                                                    <div class="form-group mb-4">
+                                                        <label>Bio</label>
+                                            
+                                                        <textarea name="bio" rows="5" maxlength="300" class="form-control"
+                                                            placeholder="Write a short bio..."><%= formData?.bio || '' %></textarea>
+                                            
+                                                        <small class="text-muted">
+                                                            Maximum 300 characters
+                                                        </small>
+                                            
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+                                        
+                                            <button type="submit" class="btn btn-primary me-2">
+                                                Save User
+                                            </button>
+                                        
+                                            <button type="reset" class="btn btn-light">
+                                                Reset
+                                            </button>
+                                        
+                                        </form>
+            
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>
+            
+                </div>
+            
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                            Copyright © 2023.
+                            Premium
+                            <a href="https://www.bootstrapdash.com/" target="_blank">
+                                Bootstrap Admin Template
+                            </a>.
+                            All rights reserved.
+                        </span>
+            
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                            Hand-crafted & made with
+                            <i class="ti-heart text-danger ms-1"></i>
+                        </span>
+                    </div>
+                </footer>
+            </div>
+
+    </div>
+
+    <%- include("partials/footer") %>
