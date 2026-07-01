@@ -1,191 +1,117 @@
 # User Management System
 
-A full-stack User Management System built using **Node.js**, **Express.js**, **MongoDB**, **Mongoose**, **EJS**, and **Bootstrap**. The application provides complete CRUD operations with secure authentication, profile management, avatar uploads, and a modern admin dashboard.
+A full-stack User Management System built with **Node.js**, **Express.js**, **MongoDB**, **Passport.js**, and **Express Session**. The project demonstrates secure authentication, session management, complete CRUD operations, file uploads, and profile management using the MVC architecture.
 
 ---
 
-## Features
+## Overview
+
+This project allows administrators to securely manage user accounts through an intuitive dashboard. Authentication is handled using Passport.js with Express Session, while passwords are encrypted using Bcrypt before being stored in MongoDB.
+
+---
+
+## Key Features
 
 ### Authentication
-- User Registration
-- User Login
-- Cookie-based Authentication
-- Password Hashing using bcrypt
+- Register Account
+- Login using Passport.js
+- Session-based Authentication
+- Logout
 - Forgot Password
 - Change Password
-- Logout
-- Protected Routes using Authentication Middleware
+- Protected Routes
+- Flash Messages
 
-### User Management (CRUD)
-- Add New User
-- View All Users
-- View User Profile
-- Edit User Details
+### User Management
+- Create User
+- View Users
+- View User Details
+- Edit User
 - Delete User
-- Upload Profile Avatar
 
 ### Profile
-- Personal Information
-- Profile Picture
-- Password Security Section
-- Change Password Option
-
-### Additional Features
-- Flash Messages
-- Form Validation
-- Duplicate Email & Username Validation
-- Image Upload using Multer
-- Responsive Admin Dashboard
-- Modern Sidebar Navigation
+- Upload Profile Image
+- View Profile
+- Edit Profile
+- Update Password
 
 ---
 
-## Technologies Used
+## Tech Stack
 
-### Frontend
-- HTML5
-- CSS3
-- Bootstrap 5
-- EJS
-
-### Backend
-- Node.js
-- Express.js
-
-### Database
-- MongoDB
-- Mongoose
-
-### Authentication & Security
-- bcrypt
-- Cookies
-
-### File Upload
-- Multer
+| Category | Technology |
+|----------|------------|
+| Backend | Node.js |
+| Framework | Express.js |
+| Database | MongoDB |
+| ODM | Mongoose |
+| Authentication | Passport.js |
+| Session | Express Session |
+| Template Engine | EJS |
+| Styling | Bootstrap 5 |
+| Password Hashing | Bcrypt |
+| File Upload | Multer |
 
 ---
 
-## User Model
+## Application Workflow
 
-The application stores the following user information:
+```
 
-- First Name
-- Last Name
-- Email
-- Username
-- Password (Hashed)
-- Mobile Number
-- City
-- Date of Birth
-- Hobby
-- Gender
-- Address
-- Role
-- Bio
-- Avatar
+
+Register User
+      │
+      ▼
+Hash Password
+      │
+      ▼
+Store User
+      │
+      ▼
+Login
+      │
+      ▼
+Passport Authentication
+      │
+      ▼
+Session Created
+      │
+      ▼
+Access Protected Routes
+      │
+      ▼
+Perform CRUD Operations
+      │
+      ▼
+Logout
+
+
+```
 
 ---
 
 ## Project Structure
 
 ```
-project/
-│
-├── controller/
-├── middleware/
-├── model/
-├── routes/
-├── uploads/
-├── views/
-│   ├── partials/
-│   ├── samples/
-│   ├── add-user.ejs
-│   ├── edit-user.ejs
-│   ├── view-page.ejs
-│   └── view-user.ejs
-│
-├── public/
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── app.js
-├── package.json
-└── README.md
+
+
+
+config/
+controllers/
+middleware/
+model/
+public/
+routes/
+views/
+app.js
+package.json
+README.md
+
+
 ```
 
 ---
 
-## CRUD Operations
-
-### Create
-Creates a new user after validating the input, hashing the password, and storing the data in MongoDB.
-
-### Read
-Displays all users and individual user details.
-
-### Update
-Updates user information and profile avatar.
-
-### Delete
-Removes the selected user from the database.
-
----
-
-## Authentication Flow
-
-1. User logs in using Email and Password.
-2. Password is verified using bcrypt.
-3. A secure HTTP-only cookie (`userId`) is created.
-4. Protected routes are verified using the `isAuthenticated` middleware.
-5. User logs out by clearing the authentication cookie.
-
----
-
-## Installation
-
-Clone the repository
-
-```bash
-git clone <repository-url>
-```
-
-Move into the project directory
-
-```bash
-cd project-name
-```
-
-Install dependencies
-
-```bash
-npm install
-```
-
-Start the server
-
-```bash
-npm start
-```
-
-For development
-
-```bash
-npm run dev
-```
-
----
-
-## Environment Variables
-
-Create a `.env` file in the project root.
-
-```env
-PORT=3000
-MONGO_URI=your_mongodb_connection_string
-```
-
----
 
 ## Screenshots
 
@@ -233,28 +159,83 @@ MONGO_URI=your_mongodb_connection_string
 Video Link:
 
 ```
+
+
 Update after recording.
+
+
 ```
 
 ---
 
-## Future Improvements
 
-- Role-based Authorization
-- Search & Filter Users
-- Pagination
-- Email Verification
-- Password Reset using OTP
-- Dashboard Analytics
+
+## Installation
+
+Clone the repository.
+
+```bash
+git clone https://github.com/your-username/user-management-system.git
+```
+
+Install dependencies.
+
+```bash
+npm install
+```
+
+Run the project.
+
+```bash
+npm start
+```
+
+Open your browser.
+
+```
+http://localhost:8000
+```
+
+---
+
+## Project Highlights
+
+- MVC Architecture
+- Passport.js Authentication
+- Express Session
+- CRUD Operations
+- File Upload using Multer
+- Password Encryption with Bcrypt
+- Flash Messages
+- Protected Routes
+- Responsive Admin Dashboard
+
+---
+
+## Project Updates
+
+This section records the major improvements made throughout the development of the project.
+
+| Version | Description |
+|----------|-------------|
+| v1.0 | Initial project setup and MVC structure |
+| v1.1 | Authentication using Cookies |
+| v1.2 | Complete CRUD operations |
+| v1.3 | Avatar Upload & Profile Page |
+| v1.4 | Form Validation & Flash Messages |
+| v2.0 | Passport.js + Express Session Authentication |
+| v2.1 | Profile Dropdown & Change Password |
 
 ---
 
 ## Author
 
-**PALAK**
+Developed as a learning project to practice:
 
----
-
-## License
-
-This project is developed for educational purposes.
+- Express.js
+- MongoDB & Mongoose
+- Passport.js
+- Express Session
+- MVC Architecture
+- CRUD Operations
+- Authentication & Authorization
