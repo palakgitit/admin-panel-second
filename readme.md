@@ -1,6 +1,6 @@
-# User Management System
+# Admin Panel
 
-A full-stack User Management System built with **Node.js**, **Express.js**, **MongoDB**, **Passport.js**, and **Express Session**. The project demonstrates secure authentication, session management, complete CRUD operations, file uploads, and profile management using the MVC architecture.
+A full-stack Admin Panel built with **Node.js**, **Express.js**, **MongoDB**, **Passport.js**, and **Express Session**. The project demonstrates secure authentication, session management, complete CRUD operations, file uploads, and profile management using the MVC architecture.
 
 ---
 
@@ -115,7 +115,6 @@ README.md
 
 ## Screenshots
 
-> Add screenshots of:
 
 
 - Login Page
@@ -161,7 +160,7 @@ Video Link:
 ```
 
 
-Update after recording.
+[viva](https://drive.google.com/file/d/1iUDIRZ4ZiEqLb3V5TWizusxf7epjINlA/view?usp=drive_link)
 
 
 ```
