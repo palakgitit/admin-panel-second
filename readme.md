@@ -160,7 +160,7 @@ Video Link:
 ```
 
 
-[viva](https://drive.google.com/file/d/1iUDIRZ4ZiEqLb3V5TWizusxf7epjINlA/view?usp=drive_link)
+https://drive.google.com/file/d/1iUDIRZ4ZiEqLb3V5TWizusxf7epjINlA/view?usp=drive_link
 
 
 ```
