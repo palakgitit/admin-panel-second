@@ -161,33 +161,6 @@ Video Link:
 [VIVA](https://drive.google.com/file/d/1iUDIRZ4ZiEqLb3V5TWizusxf7epjINlA/view?usp=drive_link)
 
 
-## Installation
-
-Clone the repository.
-
-```bash
-git clone https://github.com/your-username/user-management-system.git
-```
-
-Install dependencies.
-
-```bash
-npm install
-```
-
-Run the project.
-
-```bash
-npm start
-```
-
-Open your browser.
-
-```
-http://localhost:8000
-```
-
----
 
 ## Project Highlights
 
